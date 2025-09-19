@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainTwo - Unified Life OS</title>
+    <meta name="description" content="AI-powered life organization system. Capture thoughts with voice or text and let AI organize them perfectly.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 font-inter">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <div class="inline-flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                </div>
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    BrainTwo
+                </h1>
+            </div>
+            <p class="text-slate-600 text-lg">Unified Life OS</p>
+        </header>
+
+        <!-- Main Capture Box -->
+        <div class="max-w-2xl mx-auto mb-12">
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-2xl p-8 shadow-lg">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center gap-2 text-2xl font-bold mb-2">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-blue-500"></i>
+                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">BrainTwo</span>
+                    </div>
+                    <p class="text-slate-600">
+                        Capture anything. AI will organize it perfectly.
+                    </p>
+                </div>
+
+                <form class="space-y-4">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            placeholder="What's on your mind? (text or voice)"
+                            class="w-full h-14 px-4 pr-24 text-lg bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
+                        />
+                        <div class="absolute right-2 top-1/2 -translate-y-1/2 flex gap-2">
+                            <button
+                                type="button"
+                                class="p-3 rounded-full hover:bg-green-100 text-green-600 transition-colors"
+                            >
+                                <i data-lucide="mic" class="w-4 h-4"></i>
+                            </button>
+                            <button
+                                type="submit"
+                                class="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 transition-opacity"
+                            >
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- AI Preview Panel -->
+        <div class="max-w-2xl mx-auto mb-12">
+            <div class="bg-blue-50/50 backdrop-blur-xl border border-blue-200 rounded-xl p-6">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="brain" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-blue-900 mb-2">AI Classification Preview</h3>
+                        <div class="bg-white rounded-lg p-4 border border-blue-200">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Task</span>
+                                <span class="text-sm text-slate-600">High Priority</span>
+                            </div>
+                            <p class="text-slate-700 mb-3">Buy groceries for weekend dinner party</p>
+                            <div class="text-xs text-slate-500">
+                                <strong>Due:</strong> This Friday • <strong>Tags:</strong> shopping, personal
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-4">
+                            <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors">
+                                Save to Tasks
+                            </button>
+                            <button class="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg text-sm hover:bg-slate-300 transition-colors">
+                                Edit Classification
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Tasks Module -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:scale-105 hover:shadow-lg transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="check-square" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-slate-900 mb-2">Tasks</h3>
+                <p class="text-sm text-slate-600 mb-4">Manage your to-dos and projects</p>
+                <div class="text-xs text-slate-500">
+                    <div class="flex justify-between mb-1">
+                        <span>12 pending</span>
+                        <span>3 overdue</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Module -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:scale-105 hover:shadow-lg transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="calendar" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-slate-900 mb-2">Calendar</h3>
+                <p class="text-sm text-slate-600 mb-4">Schedule and track events</p>
+                <div class="text-xs text-slate-500">
+                    <div class="flex justify-between mb-1">
+                        <span>3 today</span>
+                        <span>8 this week</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Module -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:scale-105 hover:shadow-lg transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-slate-900 mb-2">Notes</h3>
+                <p class="text-sm text-slate-600 mb-4">Capture thoughts and ideas</p>
+                <div class="text-xs text-slate-500">
+                    <div class="flex justify-between mb-1">
+                        <span>47 notes</span>
+                        <span>12 recent</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Modules -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:scale-105 hover:shadow-lg transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="plus" class="w-6 h-6 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-slate-900 mb-2">Custom Modules</h3>
+                <p class="text-sm text-slate-600 mb-4">Create your own trackers</p>
+                <div class="text-xs text-slate-500">
+                    <div class="flex justify-between mb-1">
+                        <span>5 modules</span>
+                        <span>Create new</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div class="bg-purple-500 h-2 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="mt-12">
+            <h2 class="text-xl font-semibold text-slate-900 mb-6">Recent Activity</h2>
+            <div class="space-y-3">
+                <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-lg p-4 flex items-center gap-3">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-slate-900">Completed "Review quarterly reports"</p>
+                        <p class="text-xs text-slate-500">2 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-lg p-4 flex items-center gap-3">
+                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 text-blue-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-slate-900">Added "Team meeting" to calendar</p>
+                        <p class="text-xs text-slate-500">15 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-lg p-4 flex items-center gap-3">
+                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i data-lucide="file-plus" class="w-4 h-4 text-purple-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-slate-900">Created note "Project ideas brainstorm"</p>
+                        <p class="text-xs text-slate-500">1 hour ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

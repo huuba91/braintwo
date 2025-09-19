@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - BrainTwo</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 font-inter">
+    <!-- Navigation -->
+    <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
+        <div class="container mx-auto px-4 py-4 flex items-center gap-4">
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Back to Dashboard
+            </a>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-md flex items-center justify-center">
+                    <i data-lucide="sparkles" class="w-3 h-3 text-white"></i>
+                </div>
+                <span class="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">BrainTwo</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900 mb-2">Notes</h1>
+                <p class="text-slate-600">Capture thoughts and ideas</p>
+            </div>
+            <button class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 flex items-center gap-2">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                New Note
+            </button>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input 
+                        type="text" 
+                        placeholder="Search notes..."
+                        class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50"
+                    />
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-medium text-slate-700">Tags:</span>
+                    <button class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">All</button>
+                    <button class="px-3 py-1 hover:bg-slate-100 text-slate-600 rounded-full text-sm">Ideas</button>
+                    <button class="px-3 py-1 hover:bg-slate-100 text-slate-600 rounded-full text-sm">Work</button>
+                    <button class="px-3 py-1 hover:bg-slate-100 text-slate-600 rounded-full text-sm">Personal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Featured Note -->
+            <div class="md:col-span-2 lg:col-span-2 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Project Ideas Brainstorm</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Ideas</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="prose prose-sm max-w-none mb-4">
+                    <p class="text-slate-700 leading-relaxed">
+                        <strong>App Ideas:</strong><br/>
+                        • AI-powered habit tracker that adapts to your schedule<br/>
+                        • Social cooking app with AR recipe overlays<br/>
+                        • Collaborative workspace for remote teams with spatial audio<br/>
+                        <br/>
+                        <strong>Business Models:</strong><br/>
+                        • Freemium with premium AI features<br/>
+                        • Subscription-based with team collaboration tools<br/>
+                        • One-time purchase with optional cloud sync
+                    </p>
+                </div>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <div class="flex items-center gap-4">
+                        <span>Oct 16, 2024</span>
+                        <span>•</span>
+                        <span>347 words</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        <span>Favorite</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meeting Notes -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Team Meeting Notes</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Work</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 text-sm mb-4 line-clamp-4">
+                    Q4 Planning Discussion:<br/>
+                    - Launch new feature by Dec 1st<br/>
+                    - Hire 2 new developers<br/>
+                    - Marketing campaign starts Nov 15th<br/>
+                    - Budget allocation: 60% dev, 30% marketing, 10% misc
+                </p>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <span>Oct 15, 2024</span>
+                    <span>156 words</span>
+                </div>
+            </div>
+
+            <!-- Recipe Note -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Mom's Pasta Recipe</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs">Personal</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 text-sm mb-4 line-clamp-4">
+                    Ingredients:<br/>
+                    - 1 lb pasta<br/>
+                    - 2 cups marinara sauce<br/>
+                    - 1 cup parmesan cheese<br/>
+                    - Fresh basil<br/>
+                    Cook pasta al dente, mix with sauce...
+                </p>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <span>Oct 12, 2024</span>
+                    <span>89 words</span>
+                </div>
+            </div>
+
+            <!-- Book Notes -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Atomic Habits - Key Takeaways</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs">Learning</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 text-sm mb-4 line-clamp-4">
+                    1% better every day = 37x improvement in a year<br/>
+                    4 Laws of Behavior Change:<br/>
+                    1. Make it obvious<br/>
+                    2. Make it attractive<br/>
+                    3. Make it easy<br/>
+                    4. Make it satisfying
+                </p>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <span>Oct 10, 2024</span>
+                    <span>234 words</span>
+                </div>
+            </div>
+
+            <!-- Travel Ideas -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-teal-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Summer Vacation Ideas</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-teal-100 text-teal-700 rounded-full text-xs">Travel</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 text-sm mb-4 line-clamp-4">
+                    Top Destinations:<br/>
+                    • Iceland - Northern Lights, Blue Lagoon<br/>
+                    • Japan - Cherry blossoms, temples<br/>
+                    • New Zealand - Hiking, fjords<br/>
+                    Budget: $3-5k per person
+                </p>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <span>Oct 8, 2024</span>
+                    <span>127 words</span>
+                </div>
+            </div>
+
+            <!-- Quick Thoughts -->
+            <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-pink-500 rounded-full"></div>
+                        <h3 class="font-semibold text-slate-900">Random Thoughts</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-1 bg-pink-100 text-pink-700 rounded-full text-xs">Thoughts</span>
+                        <button class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 text-sm mb-4 line-clamp-4">
+                    Why do we always lose socks in the dryer? 🧦<br/>
+                    <br/>
+                    Idea: App that tracks which socks you put in vs. what comes out. Machine learning to predict sock loss probability.
+                </p>
+                
+                <div class="flex items-center justify-between text-sm text-slate-500">
+                    <span>Oct 5, 2024</span>
+                    <span>42 words</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More -->
+        <div class="flex justify-center mt-8">
+            <button class="px-6 py-3 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors">
+                Load More Notes
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
